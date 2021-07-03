@@ -51,7 +51,7 @@ public class NaiveSingletonTest {
         public void run() {
             try {
                 SingletonClassNaiveImplementation s = SingletonClassNaiveImplementation.getInstance("naive singleton thread 2");
-                System.out.printf("test count: %2d\tthread number: 1\t value:%s\n",count, s.getName());
+                System.out.printf("test count: %2d\tthread number: 2\t value:%s\n",count, s.getName());
             } catch (InterruptedException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
