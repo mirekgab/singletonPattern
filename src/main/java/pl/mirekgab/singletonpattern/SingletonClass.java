@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  */
 public final class SingletonClass {
 
-    private static volatile SingletonClass instance;
+    private static volatile SingletonClass INSTANCE;
     private String name;
 
     private SingletonClass(String name) throws InterruptedException {
@@ -22,16 +22,16 @@ public final class SingletonClass {
     }
 
     public static SingletonClass getInstance(String name) throws InterruptedException {
-        SingletonClass result = instance;
+        SingletonClass result = INSTANCE;
         if (result != null) {
             return result;
         }
 
         synchronized (SingletonClass.class) {
-            if (instance == null) {
-                instance = new SingletonClass(name);
+            if (INSTANCE == null) {
+                INSTANCE = new SingletonClass(name);
             }
-            return instance;
+            return INSTANCE;
         }
     }
 

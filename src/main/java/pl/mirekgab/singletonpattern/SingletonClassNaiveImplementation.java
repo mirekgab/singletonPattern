@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  */
 public final class SingletonClassNaiveImplementation {
 
-    private static volatile SingletonClassNaiveImplementation instance;
+    private static volatile SingletonClassNaiveImplementation INSTANCE;
     private String name;
 
     private SingletonClassNaiveImplementation(String name) throws InterruptedException {
@@ -23,10 +23,10 @@ public final class SingletonClassNaiveImplementation {
 
     public static SingletonClassNaiveImplementation getInstance(String name) throws InterruptedException {
 
-        if (instance == null) {
-            instance = new SingletonClassNaiveImplementation(name);
+        if (INSTANCE == null) {
+            INSTANCE = new SingletonClassNaiveImplementation(name);
         }
-        return instance;
+        return INSTANCE;
     }
 
     public String getName() {

@@ -11,7 +11,6 @@ public class Main {
         for (int a = 0; a < 10; a++) {
             naiveSingletonTest.test(a);
         }
-
         TimeUnit.SECONDS.sleep(5);
         System.out.println("\n\n-----------------------------------");
         System.out.println("singleton test");
